@@ -1,5 +1,5 @@
 name: Upload coverage to Codecov
-on: [push, pulul_request]
+on: [push, pull_request]
 jobs:
   no-deps:
     runs-on: ${{ matrix.os }}
