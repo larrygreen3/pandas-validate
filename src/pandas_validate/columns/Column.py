@@ -48,7 +48,7 @@ class Column:
 				validated_series.append(validated_value)
 			except Exception as e:
 				validated_series.append(None)
-				exceptions.append(dict(row=index, value=value, error="Column validation failed", error_details=e))
+				exceptions.append(dict(row=index, value=value, error="Column validation failed", error_details=str(e)))
 
 				if throw:
 					raise e

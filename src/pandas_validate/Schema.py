@@ -58,6 +58,6 @@ class Schema:
 					raise KeyError(error_details)
 		
 		# Convert the exceptions dict into a format that can be turned into a DataFrame
-		exceptions_arr = [[c].extend(e) for c in exceptions for e in exceptions[c]]
+		exceptions_arr = [dict(column=c, **e) for c in exceptions for e in exceptions[c]]
 				
 		return validated_df, pd.DataFrame(exceptions_arr)

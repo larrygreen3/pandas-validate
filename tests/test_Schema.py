@@ -49,8 +49,43 @@ def test_schema_validate_invalid_value():
 		'IntField': [None, 6, None],
 		'TextField': [None, None, None]
 	})
+
+	expected_exceptions = pd.DataFrame([
+			{
+				'column': 'IntField', 
+				'row': 0, 'value': 1, 
+				'error': 'Column validation failed', 
+				'error_details': 'The value 1 < 3'
+			}, {
+				'column': 'IntField', 
+				'row': 2, 
+				'value': 500, 
+				'error': 'Column validation failed', 
+				'error_details': 'The value 500 < 124'
+			}, {
+				'column': 'TextField', 
+				'row': 0, 
+				'value': 'ab', 
+				'error': 'Column validation failed', 
+				'error_details': 'The value ab is too short'
+			}, {
+				'column': 'TextField', 
+				'row': 1, 
+				'value': 
+				'abcd', 
+				'error': 'Column validation failed', 
+				'error_details': 'The value abcd does not match the regular expression.'
+			}, {
+				'column': 'TextField', 
+				'row': 2, 
+				'value': 
+				'ccbbaa', 
+				'error': 'Column validation failed', 
+				'error_details': 'The value ccbbaa is too long'
+			}
+	])
 	
 	validated_df, exceptions = MySchema.validate(test)
 
 	assert validated_df.equals(expected)
-	assert len(exceptions) == 5
+	assert exceptions.equals(expected_exceptions)
