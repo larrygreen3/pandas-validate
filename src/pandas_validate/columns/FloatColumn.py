@@ -54,6 +54,6 @@ class FloatColumn(Column):
 			raise ValueError(f'The value {x} < {self.min_value}')
 
 		if isinstance(self.max_value, float) and f > self.max_value:
-			raise ValueError(f'The value {x} < {self.max_value}')
+			raise ValueError(f'The value {x} > {self.max_value}')
 
 		return f

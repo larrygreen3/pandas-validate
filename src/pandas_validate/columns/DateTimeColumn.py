@@ -57,9 +57,9 @@ class DateTimeColumn(Column):
 			raise ValueError(f'The value {x} is not a valid datetime.')
 		
 		if self.min_date is not None and x < self.min_date:
-			raise ValueError(f'The value {x} is too early.')
+			raise ValueError(f'The value {x} is before {self.max_date}".')
 
 		if self.max_date is not None and x > self.max_date:
-			raise ValueError(f'The value {x} is too late.')
+			raise ValueError(f'The value {x} is after {self.max_date}.')
 
 		return x

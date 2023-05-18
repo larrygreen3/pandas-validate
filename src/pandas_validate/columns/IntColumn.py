@@ -54,6 +54,6 @@ class IntColumn(Column):
 			raise ValueError(f'The value {x} < {self.min_value}')
 
 		if isinstance(self.max_value, int) and i > self.max_value:
-			raise ValueError(f'The value {x} < {self.max_value}')
+			raise ValueError(f'The value {x} > {self.max_value}')
 
 		return i

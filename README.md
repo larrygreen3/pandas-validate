@@ -4,6 +4,7 @@
 [![PyPI Latest Release](https://img.shields.io/pypi/v/pandas-validate.svg)](https://pypi.org/project/pandas-validate/)
 [![Package Status](https://img.shields.io/pypi/status/pandas-validate.svg)](https://pypi.org/project/pandas-validate/)
 [![License](https://img.shields.io/pypi/l/pandas-validate.svg)](https://github.com/larrygreen3/pandas-validate/blob/main/LICENSE)
+[![Package Status](https://img.shields.io/pypi/dm/pandas-validate.svg)](https://pypistats.org/packages/pandas-validate)
 
 > A python package used for validating pandas dataframes.
 

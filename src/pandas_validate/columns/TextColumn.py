@@ -54,12 +54,12 @@ class TextColumn(Column):
 			raise ValueError(f'The value {x} is not a string')
 
 		if self.min_length is not None and len(x) < self.min_length:
-			raise ValueError(f'The value {x} is too short')
+			raise ValueError(f'The length of {x} is shorter than {self.min_length}')
 
 		if self.max_length is not None and len(x) > self.max_length:
-			raise ValueError(f'The value {x} is too long')
+			raise ValueError(f'The length of {x} is longer than {self.max_length}')
 		
 		if self.pattern is not None and not match(self.pattern, x):
-			raise ValueError(f'The value {x} does not match the regular expression.')
+			raise ValueError(f'The value {x} does not match the regular expression {self.pattern}.')
 
 		return x

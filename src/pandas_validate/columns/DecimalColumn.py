@@ -56,6 +56,6 @@ class DecimalColumn(Column):
 			raise ValueError(f'The value {x} < {self.min_value}')
 
 		if isinstance(self.max_value, Decimal) and d > self.max_value:
-			raise ValueError(f'The value {x} < {self.max_value}')
+			raise ValueError(f'The value {x} > {self.max_value}')
 
 		return d
