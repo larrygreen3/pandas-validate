@@ -58,7 +58,7 @@ Results
 
          column  row   value                     error                                      error_details
 0      IntField  0.0       1  Column validation failed                                    The value 1 < 3
-1      IntField  2.0      11  Column validation failed                                  The value 11 < 10
+1      IntField  2.0      11  Column validation failed                                  The value 11 > 10
 2     TextField  0.0      ab  Column validation failed                          The value ab is too short
 3     TextField  1.0    abcd  Column validation failed  The value abcd does not match the regular expr...
 4     TextField  2.0  ccbbaa  Column validation failed                       The value ccbbaa is too long
